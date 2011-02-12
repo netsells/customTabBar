@@ -26,7 +26,7 @@ Example
 	tabGroup.open();
 
 	// Here is the magic
-	Ti.include("customTabBar.js");
+	Ti.include("customTabBar/customTabBar.js");
 
 	var ctb = new CustomTabBar({
 		imagePath: 'iphone/images/',
