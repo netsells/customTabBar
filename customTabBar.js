@@ -63,5 +63,5 @@ CustomTabBar = function(settings) {
 	return {
 		hide: function() { customTabBar.hide(); },
 		show: function() { customTabBar.show(); }
-	}
+	};
 };
