@@ -15,7 +15,7 @@ CustomTabBar = function(settings) {
 			var pos = e.source.pos;
 			
 			// Switch to the tab associated with the image pressed
-			tabGroup.tabs[pos].active = true;
+			settings.tabBar.tabs[pos].active = true;
 			
 			// Reset all the tab images
 			resetTabs();

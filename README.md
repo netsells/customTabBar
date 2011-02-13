@@ -29,6 +29,7 @@ Example
 	Ti.include("customTabBar/customTabBar.js");
 
 	var ctb = new CustomTabBar({
+		tabBar: tabGroup,
 		imagePath: 'iphone/images/',
 		width: 80,
 		height: 40,
