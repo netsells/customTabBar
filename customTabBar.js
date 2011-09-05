@@ -1,5 +1,6 @@
 CustomTabBar = function(settings) {
 	var tabBarItems = [];
+	var	tabCurrent = 0;
 	
 	var resetTabs = function() {
 		for(var i = 0; i < tabBarItems.length; i++) {
@@ -13,9 +14,17 @@ CustomTabBar = function(settings) {
 		tabItem.addEventListener('click', function(e) {
 			// Just fetching the 'i' variable from the loop
 			var pos = e.source.pos;
+
+			if (tabCurrent == pos) {
+				// TODO
+				// Change back to root window, like the native tab action.
+    			return false;
+	        }		
 			
 			// Switch to the tab associated with the image pressed
 			settings.tabBar.tabs[pos].active = true;
+			tabCurrent = pos;
+
 			
 			// Reset all the tab images
 			resetTabs();
