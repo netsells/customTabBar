@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Customtabbar by netsells</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Customtabbar</h1>
+<p>A custom tabbar for Appcelerator's Titanium</p>
+        <p class="view"><a href="https://github.com/netsells/customTabBar">View the Project on GitHub <small>netsells/customTabBar</small></a></p>
+        <ul>
+          <li><a href="https://github.com/netsells/customTabBar/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/netsells/customTabBar/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/netsells/customTabBar">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Custom Tab Bar</h1>
+
+<p>Easily add a custom tabbar to your Appcelerator Titanium iPhone app!</p>
+
+<p>All available settings are shown in the example, defaults will be along shortly.</p>
+
+<h2>Example</h2>
+
+<pre><code>// Create the tab group
+var tabGroup = Titanium.UI.createTabGroup();
+
+// Assign windows &amp; tabs
+// IMPORTANT:
+//          'tabBarHidden: true' should be set on all windows
+//          height should be set to 480 - customTabBar's height (change 480 to app screen height)
+var win1 = Titanium.UI.createWindow({ title:'Tab 1', height: 440, tabBarHidden: true });
+var tab1 = Titanium.UI.createTab({ window:win1 });
+var win2 = Titanium.UI.createWindow({ title:'Tab 2', height: 440, tabBarHidden: true });
+var tab2 = Titanium.UI.createTab({ window:win2 });
+tabGroup.addTab(tab1);  
+tabGroup.addTab(tab2);  
+
+// open tab group
+tabGroup.open();
+
+// Here is the magic
+Ti.include("customTabBar/customTabBar.js");
+
+var ctb = new CustomTabBar({
+    tabBar: tabGroup,
+    imagePath: 'iphone/images/',
+    width: 80,
+    height: 40,
+    items: [
+        { image: 'home.png', selected: 'home_over.png' },
+        { image: 'cloud.png', selected: 'cloud_over.png' },
+        { image: 'cart.png', selected: 'cart_over.png' },
+        { image: 'settings.png', selected: 'settings_over.png' }
+    ]
+});
+</code></pre>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/netsells">netsells</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
