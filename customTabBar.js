@@ -4,9 +4,7 @@ CustomTabBar = function(settings) {
 	
 	var resetTabs = function() {
 		for(var i = 0; i < tabBarItems.length; i++) {
-			// Clear all the images to make sure only
-			// one is shown as selected
-			tabBarItems[i].image = null;
+			tabBarItems[i].image = tabBarItems[i].backgroundImage;
 		}
 	};
 	
@@ -47,8 +45,6 @@ CustomTabBar = function(settings) {
 			// background is the default image
 			backgroundImage: settings.imagePath + settings.items[i].image,
 			
-			// image is the selected image
-			image: settings.imagePath + settings.items[i].selected,
 			width: settings.width,
 			height: settings.height,
 			left: settings.width * i
